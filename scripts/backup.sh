@@ -34,7 +34,7 @@ BASENAME=$(basename "$SOURCE")
 BACKUP_FILE="$BACKUP_DIR/backup_${BASENAME}_${TIMESTAMP}.tar.gz"
 
 # Backup erstellen
-tar -czf "$BACKUP_FILE" "$SOURCE"
+tar -czf "$BACKUP_FILE" -C "$(dirname "$SOURCE")" "$(basename "$SOURCE")"
 
 # Logging
 echo "$(date '+%Y-%m-%d %H:%M:%S') Backup erstellt: $BACKUP_FILE" >> "$LOGFILE"
