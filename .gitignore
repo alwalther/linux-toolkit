@@ -20,3 +20,4 @@ backup/*.tar.gz
 .vscode/
 .sublime-workspace
 .sublime-project
+restore/
