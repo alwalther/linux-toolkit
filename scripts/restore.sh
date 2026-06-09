@@ -31,10 +31,10 @@ done
 
 echo
 read -p "Zielverzeichnis: " TARGET_DIR
+TARGET_DIR="${TARGET_DIR/#\~/$HOME}"
 
-RESTORE_DIR="$TARGET_DIR/restore_$(basename "$BACKUP_FILE" .tar.gz)"
-if [[ ! -d $RESTORE_DIR ]]; then
-    mkdir -p "$RESTORE_DIR"
+if [[ ! -d $TARGET_DIR ]]; then
+    mkdir -p "$TARGET_DIR"
 fi
 
 echo "Backup wird wiederhergestellt..."
@@ -43,4 +43,4 @@ tar -xzf "$BACKUP_FILE" -C "$TARGET_DIR"
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') Restore durchgeführt: $BACKUP_FILE -> $TARGET_DIR" >> "$LOGFILE"
 
-echo "Restore abgeschlossen."
+echo "Restore abgeschlossen in: $TARGET_DIR"
