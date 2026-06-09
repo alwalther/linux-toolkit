@@ -1,0 +1,22 @@
+# =========================
+# Logs
+# =========================
+logs/*.log
+
+# =========================
+# Backups
+# =========================
+backup/*.tar.gz
+
+# optional: falls du temporäre Dateien erstellst
+*.tmp
+*.swp
+*.swo
+
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+.vscode/
+.sublime-workspace
+.sublime-project
